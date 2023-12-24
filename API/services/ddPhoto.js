@@ -1,7 +1,10 @@
+// Dependencies
 const db = require('./db');
 const helper = require('../helper');
 const config = require('../config');
 
+// Functions
+// GET all terms
 async function getMultipleTerms(page = 1) {
     const offset = helper.getOffset(page, config.listPerPage);
     const rows = await db.query(
@@ -16,6 +19,7 @@ async function getMultipleTerms(page = 1) {
     }
 }
 
+// GET all customers
 async function getMultipleCustomers(page = 1) {
     const offset = helper.getOffset(page, config.listPerPage);
     const rows = await db.query(
@@ -30,6 +34,7 @@ async function getMultipleCustomers(page = 1) {
     }
 }
 
+// POST new terms
 async function newTerms(term) {
     const result = await db.query(
         `INSERT INTO terms
@@ -47,6 +52,7 @@ async function newTerms(term) {
     return {message};
 }
 
+// PUT terms
 async function updateTerm(code, term) {
     const result = await db.query(
         `UPDATE terms

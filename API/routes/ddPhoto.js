@@ -1,7 +1,9 @@
+/* ROUTER */
 const express = require('express');
 const router = express.Router();
 const ddPhoto = require('../services/ddPhoto');
 
+// READ all terms from the terms table in the database
 router.get('/terms', async function(req, res, next) {
     try {
         res.json(await ddPhoto.getMultipleTerms(req.query.page));
@@ -11,6 +13,7 @@ router.get('/terms', async function(req, res, next) {
     }
 });
 
+// READ all customers from the customers table in the database
 router.get('/customers', async function(req, res, next) {
     try {
         res.json(await ddPhoto.getMultipleCustomers(req.query.page));
@@ -20,6 +23,7 @@ router.get('/customers', async function(req, res, next) {
     }
 });
 
+// CREATE new terms to add to the database
 router.post('/add-term', async function(req, res, next) {
     try {
         res.json(await ddPhoto.newTerms(req.body));
@@ -29,6 +33,7 @@ router.post('/add-term', async function(req, res, next) {
     }
 });
 
+// UPDATE terms in the database
 router.put('/update-term/:id', async function(req, res, next) {
     try {
         res.json(await ddPhoto.updateTerm(req.params.id, req.body));
@@ -38,6 +43,6 @@ router.put('/update-term/:id', async function(req, res, next) {
     }
 });
 
-/* ADD NEW ROUTES BELOW */
+// TODO: ADD NEW ROUTES BELOW
 
 module.exports = router;

@@ -1,3 +1,4 @@
+// Setup
 const express = require("express");
 const app = express();
 const port = 3000;
@@ -10,10 +11,12 @@ app.use(
     })
 );
 
+// Display status on root
 app.get("/", (req, res) => {
     res.json({message: "ok" });
 });
 
+// Start routing at /ddphoto
 app.use("/ddPhoto", ddPhotoRouter);
 
 app.use((err, req, res, next) => {
@@ -23,6 +26,7 @@ app.use((err, req, res, next) => {
     return;
 });
 
+// Listening
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`);
 });
