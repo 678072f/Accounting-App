@@ -2,7 +2,7 @@
 const express = require("express");
 const app = express();
 const port = 3000;
-const ddPhotoRouter = require("./routes/ddPhoto");
+const ddPhotoRouter = require("./routes/Router");
 
 app.use(express.json());
 app.use(

@@ -14,12 +14,17 @@ This project has the following dependencies:
 In order to run the app, you will need to have Node.js installed. To run the API, use the following command:
 ```node index.js```
 
+This will run the API on http://localhost:3000
+
 To set up the project:
+
 ```npm init -y```
+
 ```npm i express```
+
 ```npm i mysql2```
 
-This project is based on a mySQL database (DB = database). You will need to set that up on your own. SQL code is provided for the database structure used in my project. mySQL Version 7+ is required for the included code to work.
+This project is based on a mySQL database (DB = database). You will need to set that up on your own. SQL code is provided for the database structure used in my project (also see the 'DB Strcture' image attached for a visual). mySQL Version 7+ is required for the included code to work.
 
 For the API to connect to the database, you will also need to setup a .env file with the following parameters:
 1. HOST="{hostname of your DB Server}"
@@ -50,6 +55,7 @@ The project file structure is as follows:
         - ViewBuild.sql
 - README.md
 - LICENSE
+- DB Structure.png
 
 # Credits
 
